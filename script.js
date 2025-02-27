@@ -71,8 +71,9 @@ function showResponse(answer) {
 
 function playSong() {
     let song = document.getElementById("loveSong");
-    song.play();
+    song.play().catch(error => console.log("Playback issue: ", error));
 }
+
 
 function viewResponses() {
     let savedResponses = JSON.parse(localStorage.getItem("nehaResponses")) || [];
